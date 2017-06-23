@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home9716</title>
+  <title><%= yield(:title) %> | 9716 E Roosevelt</title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,8 @@
 <body>
 <%= render 'layouts/header' %>
 <div class="container">
-  <%= yield %><%= render 'layouts/footer' %>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
   <%= debug(params) if Rails.env.development? %>
 </div>
 
