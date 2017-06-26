@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'bcrypt', '3.1.11'
+
 gem 'devise' #User Authentication
 gem 'figaro'  #Keeps you API keys secure
 gem 'pundit' #Authorization
