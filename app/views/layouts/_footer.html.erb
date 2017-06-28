@@ -1,15 +1,17 @@
-<footer class="footer">
-  <div class="container">
-      <small>
-        <a href="#">9716</a>
-        by Natalia Bugaeva
-      </small>
-    <nav>
-      <ul>
-        <li><%= link_to "Something", '#' %></li>
-        <li><%= link_to "Something", '#' %></li>
-        <li><%= link_to "Something", '#' %></li>
-      </ul>
-    </nav>
-  </div>
-</footer>
+<% if logged_in? %>
+    <footer class="footer">
+      <div class="container">
+        <small> All rights reserved © 2017 </small>
+        <nav>
+          <ul><li><%= link_to "Contact Us", contact_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+<% else %>
+    <footer class="footer">
+      <div class="cen">
+        <small> All rights reserved © 2017 </small>
+      </div>
+    </footer>
+<% end %>
