@@ -100,9 +100,9 @@ footer {
       color: $gray-darker;
     }
   }
-  small {
-    float: left;
-  }
+  //small {
+  //  float: left;
+  //}
   ul {
     float: right;
     list-style: none;
@@ -114,6 +114,10 @@ footer {
 }
 
 /* miscellaneous */
+
+.menu {
+  margin-top: 1em;
+}
 
 .debug_dump {
   clear: both;

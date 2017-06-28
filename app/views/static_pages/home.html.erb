@@ -1,3 +1,10 @@
-<% provide(:title, "Home") %>
-<h1>Home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% if logged_in? %>
+<%= render 'shared/logged_in' %>
+<% else %>
+<div class="center hero-unit">
+  <h1>Welcome to our website</h1>
+  <h2>
+    In order to access your account, please <%= link_to "login", login_path %>. Don't have an account? <%= link_to "Contact Us!", contact_path %>
+  </h2>
+</div>
+<% end %>

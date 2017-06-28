@@ -1,12 +1,14 @@
 Home9716::Application.routes.draw do
-  # get 'users/new'
+  get 'sessions/new'
   root 'static_pages#home'
-  match '/login', to: 'static_pages#login', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
-  match '/profile', to: 'static_pages#profile', via: 'get'
+  match '/profile', to: 'users#show', via: 'get'
   match '/billing_and_payments', to: 'static_pages#billing_and_payments', via: 'get'
   match '/settings', to: 'static_pages#settings', via: 'get'
   get '/new', to: 'users#new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
   resources :users
 
