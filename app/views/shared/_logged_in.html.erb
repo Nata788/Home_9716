@@ -7,8 +7,18 @@
       <ul class="menu">
         <li><%= link_to "Billing and Payments", billing_and_payments_path %></li>
         <li><%= link_to "Payment History", '#' %></li>
-        <li><%= link_to "Copy of the Lease", '#' %></li>
         <li><%= link_to "Water bill", '#' %></li>
+        <% if current_user.admin == true %>
+            <li><%= link_to "Copy of the Lease #1", "RoR.pdf" %></li>
+            <li><%= link_to "Copy of the Lease #2", "Lease_2.pdf" %></li>
+        <% end %>
+
+        <% if current_user.floor_number == "1" %>
+            <li><%= link_to "Copy of the Lease", "Lease_1.pdf" %></li>
+        <% end %>
+        <% if current_user.floor_number == "2" %>
+            <li><%= link_to "Copy of the Lease", "Lease_2.pdf" %></li>
+        <% end %>
       </ul>
     </section>
   </aside>

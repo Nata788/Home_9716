@@ -7,6 +7,9 @@
         <%= f.label :name %>
         <%= f.text_field :name %>
 
+        <%= f.label :floor_number %>
+        <%= f.text_field :floor_number %>
+
         <%= f.label :email %>
         <%= f.text_field :email %>
 
@@ -15,6 +18,11 @@
 
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation %>
+
+        <%= f.label :admin, class: "checkbox inline" do %>
+            <%= f.check_box :admin %>
+            <span>Admin?</span>
+            <% end %>
 
         <%= f.submit "Save New User", class: "btn btn-large btn-primary" %>
     <% end %>

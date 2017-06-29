@@ -2,7 +2,13 @@
 <h1>All users</h1>
 
 <% @user.each do |user| %>
-    <ul>
-      <li> <%= user.email %></li>
-    </ul>
+    <div class="list-group">
+      <a href="users/ <%= user.id %>" class="list-group-item">
+        <% if user.admin == true %>
+        <%= user.name %>, Floor # <%= user.floor_number %> - Admin
+            <% else %>
+            <%= user.name %>, Floor # <%= user.floor_number %> - Tenant
+            <% end %>
+      </a>
 <% end %>
+</div>
