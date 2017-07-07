@@ -1,14 +1,35 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
 
-<% @user.each do |user| %>
-    <div class="list-group">
-      <a href="users/ <%= user.id %>" class="list-group-item">
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Floor #</th>
+    <th>Role</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <% @user.each do |user| %>
+      <tbody>
+      <tr>
+        <th scope="row"><%= user.id %></th>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.floor_number %></td>
         <% if user.admin == true %>
-        <%= user.name %>, Floor # <%= user.floor_number %> - Admin
-            <% else %>
-            <%= user.name %>, Floor # <%= user.floor_number %> - Tenant
-            <% end %>
-      </a>
-<% end %>
-</div>
+            <td>Landlord</td>
+        <% else %>
+            <td>Tenant</td>
+        <% end %>
+        <td> <%= link_to "Edit", edit_user_path(user.id) %> </td>
+        <% if !current_user?(user) %>
+            <td><%= link_to "delete", user, method: :delete, data: {confirm: "You sure?"} %></td>
+        <% end %>
+  <% end %>
+  </tr>
+  </tbody>
+</table>
